@@ -1,11 +1,6 @@
 import cv2
-#import RPi.GPIO as GPIO
 import time 
 
-#GPIO.setmode(GPIO.BCM)
-#signal_pin = 17
-#GPIO.setup(signal_pin, GPIO.OUT)
-#GPIO.output(signal_pin, GPIO.LOW)
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture()
@@ -40,12 +35,9 @@ while True:
 
     if new_detection:
         print("A face has been detected !")
- #       GPIO.ouptut(signal_pin, GPIO.HIGH)
         time.sleep(0.5)
- #       GPIO.output(signal_pin, GPIO.LOW)
         previous_faces = faces
     else:
- #       GPIO.output(signal_pin, GPIO.LOW)
         previous_faces = faces
 
     for (x, y, w, h) in faces:
@@ -58,5 +50,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-#GPIO.ouptut(signal_pin, GPIO.LOW)
-#GPIO.cleanup()
