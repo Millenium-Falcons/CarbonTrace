@@ -9,7 +9,7 @@ import requests
 
 train_id = 12345
 msg = 'an anomaly has been detected'
-url = 'https://carbon-trace-pied.vercel.app/anomaly-detected'
+url = '<BACKEND_URL>'
 
 def generate_data():
     data = {
