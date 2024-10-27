@@ -13,7 +13,6 @@ import {
 import Inputbox from "./Inputbox";
 import Button from "./Button";
 
-// Register required components
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Tooltip, Legend);
 
 export default function LineChartComponent2() {
@@ -29,7 +28,6 @@ export default function LineChartComponent2() {
       console.log(response.data);
       setTrainData(response.data);
 
-      // Extract the train weights and update state
       const modifiedarr = response.data.map((element) => element.count);
       const modifiedarr2=response.data.map((element) => element.date.slice(0,10));
       setTrainweight(modifiedarr);

@@ -17,10 +17,7 @@ const Card2=({heading,link,details})=>{
   onClick={()=>{navigate(link)}}
     className="text-[0.8em] absolute bottom-[1em] left-[1em] text-[#26de9a] group-hover:text-[white] duration-500"
   >
-    {/* <span
-      className="relative before:h-[0.16em] before:absolute before:w-full before:content-[''] before:bg-[#6C3082] group-hover:before:bg-[white] duration-300 before:bottom-0 before:left-0"
-      ><FaArrowRight></FaArrowRight></span
-    > */}
+    
     <FaArrowRight className="h-5 w-4"></FaArrowRight>
     <i className="fa-solid fa-arrow-right"></i>
   </button>
