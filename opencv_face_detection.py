@@ -1,9 +1,41 @@
 import cv2
-import time 
+import time
+import json
+import requests
+
+train_id = 12345
+msg = 'a face has been detected'
+url = 'https://carbon-trace-pied.vercel.app/anomaly-detected'
+
+def generate_data():
+    data = {
+        "train_id": train_id,
+        "anomaly_details": msg
+    }
+    return data
+
+def send_data():
+    data = generate_data()
+    
+    try:
+        json_data = json.dumps(data)
+
+        headers = {"Content-Type": "application/json"}
+        response = requests.post(url, data=json_data, headers=headers)
+        
+        if response.status_code == 200:
+            print("Data sent successfully!")
+            print("Server Response:", response.json())
+        else:
+            print(f"Failed to send data. Status Code: {response.status_code}")
+            print("Error:", response.text)
+    
+    except requests.RequestException as e:
+        print(f"An error occurred: {e}")
 
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-cap = cv2.VideoCapture()
+cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Error: Could not open camera.")
     exit()
@@ -34,9 +66,9 @@ while True:
             break
 
     if new_detection:
-        print("A face has been detected !")
-        time.sleep(0.5)
         previous_faces = faces
+        print("A face has been detected!")
+        send_data()
     else:
         previous_faces = faces
 
@@ -50,3 +82,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
