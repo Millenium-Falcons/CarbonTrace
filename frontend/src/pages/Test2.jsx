@@ -75,16 +75,19 @@ const Test2 = () => {
         <Navbar />
         <div className="flex flex-col justify-center items-center gap-4 p-4 my-8">
           <div className="flex flex-wrap gap-4">
+          <Card2 heading="Train Weight Analysis" link="/graph" /> 
           <Card details={details1}></Card>
-            <Card2 heading="Train Weight Analysis" link="/graph" />          
+                    
           </div>
           <div className="flex flex-wrap gap-4">
-          <Card details={details2}></Card>
           <Card2 heading="Anomaly Data" link="/graph2" />
+          <Card details={details2}></Card>
+          
           </div>
           <div className="flex flex-wrap gap-4">
+          <Card2 heading="Coal Moisture Data" link="/graph3" />
           <Card details={details3}></Card>
-            <Card2 heading="Coal Moisture Data" link="/graph3" />
+            
           </div>
           
         
