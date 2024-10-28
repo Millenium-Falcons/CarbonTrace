@@ -69,10 +69,6 @@ execute the the python code for anomaly detection using OpenCV using the followi
 ```bash
 python opencv_face_detection.py
 ```
-Install the required modules and dependencies using this command
-```
-pip install -r requirements.txt
-```
 
 ## Contributors
 <table>
