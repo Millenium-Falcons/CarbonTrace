@@ -17,7 +17,7 @@ const Navbar=()=>{
             
             <div className="text-2xl flex items-center gap-2 font-bold uppercase">
                 <GiThrownCharcoal></GiThrownCharcoal>
-                <p>Coal</p>
+                <p>Carbon</p>
                 <p className="text-secondary text-[#26de9a]">Trace</p>
             </div>
             <div className="hidden md:block">

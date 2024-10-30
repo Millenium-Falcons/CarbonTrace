@@ -13,7 +13,7 @@ export default function Footer() {
       }}>
         <hr style={{ borderColor: "white", margin: "20px 0" }} />
         <div style={{ padding: "10px" }}>
-          Copyright &copy; CoalTrace.com | All Rights Reserved
+          Copyright &copy; CarbonTrace.com | All Rights Reserved
         </div>
       </footer>
 
